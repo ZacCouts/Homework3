@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint src/**/*.js --fix"
+    "lint": "eslint src/**/*.js --fix"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "http-status-codes": "^2.1.4"
   },
   "devDependencies": {
     "eslint": "^7.23.0",
@@ -16,5 +18,13 @@
     "eslint-plugin-import": "^2.22.1"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZacCouts/Homework3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZacCouts/Homework3/issues"
+  },
+  "homepage": "https://github.com/ZacCouts/Homework3#readme",
   "description": ""
 }
