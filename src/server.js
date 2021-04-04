@@ -1,9 +1,12 @@
-const express = require('express');
+const Express = require('express');
 
 const BodyParser = require('body-parser');
 
-const app = express();
+const NoDelete = require('../middleware/noDelete');
+
+const app = Express();
 
 app.use(BodyParser.json());
+app.use(NoDelete);
 
 app.listen(8080);
