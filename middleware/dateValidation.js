@@ -16,6 +16,7 @@ module.exports = (req, res, next) => {
         Object.keys(queryDate).forEach((key) => {
             queryDate[key] = Number.parseInt(queryDate, 10);
         });
+
         const EpochHeader = headerDate;
         const EpochQuery = queryDate;
 
