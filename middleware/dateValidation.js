@@ -20,13 +20,19 @@ module.exports = (req, res, next) => {
         const EpochHeader = headerDate;
         const EpochQuery = queryDate;
 
-        if(EpochHeader > (timeConvert- 300) && EpochHeader < (timeConvert + 300)) {
+        if(EpochHeader > (timeConvert - 300) && EpochHeader < (timeConvert + 300)) {
             req.dateValidation = EpochHeader;
             req.timeConvert = timeConvert;
+            res.status(OK).json({message: 'The epoch is in-spec'});
+        } else {
+            res.status(UNAUTHORIZED).json({message: 'The header epoch is out-of-spec'});
         }
-        if(EpochQuery > (timeConvert- 300) && EpochQuery < (timeConvert + 300)) {
+        if(EpochQuery > (timeConvert - 300) && EpochQuery < (timeConvert + 300)) {
             req.dateValidation = EpochQuery;
             req.timeConvert = timeConvert;
+            res.status(OK).json({message: 'The epoch is in-spec'});
+        }else {
+            res.status(UNAUTHORIZED).json({message: 'The header epoch is out-of-spec'});
         }
     }
    next();
