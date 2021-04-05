@@ -1,5 +1,5 @@
 const winston = require('winston');
-const dateValid = require('dateValidation');
+const dateValid = require('../middleware/dateValidation');
 
 const logger = winston.createLogger({
     level:'info',
@@ -14,7 +14,7 @@ const logger = winston.createLogger({
 module.exports = (req, res, next) =>{
   logger.info('Current server time (epoch): ', {Date:now() / 1000});
   logger.info('HTTP verb: ', req.method);
-  logger.info('URL: ', req.url);
+  logger.info('URL: ', req.originalUrl);
   logger.info('Body: ', req.body);
   logger.info('Query Parameters: ', req.query);
   logger.info('Headers: ', req.headers);
